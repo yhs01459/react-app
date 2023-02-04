@@ -10,7 +10,7 @@ const TodoListitem = ({ todo }) => {
   const { text, checked } = todo; //비구조화 할당
 
   return (
-    <div className="TodoListItem">
+    <div className="TodoListitem">
       <div className={cn("checkbox", { checked })}>
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <div className="text">{text}</div>
