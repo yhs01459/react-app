@@ -4,13 +4,16 @@ import {
   MdRemoveCircleOutline,
 } from "react-icons/md";
 import "./TodoListitem.scss";
+import cn from "classnames";
 
-const TodoListitem = () => {
+const TodoListitem = ({ todo }) => {
+  const { text, checked } = todo; //비구조화 할당
+
   return (
     <div className="TodoListItem">
-      <div className="checkbox">
-        <MdCheckBoxOutlineBlank></MdCheckBoxOutlineBlank>
-        <div className="text">할 일</div>
+      <div className={cn("checkbox", { checked })}>
+        {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+        <div className="text">{text}</div>
       </div>
       <div className="remove">
         <MdRemoveCircleOutline></MdRemoveCircleOutline>
