@@ -6,12 +6,12 @@ import {
 import "./TodoListitem.scss";
 import cn from "classnames";
 
-const TodoListitem = ({ todo, onRemove }) => {
+const TodoListitem = ({ todo, onRemove, onToggle }) => {
   const { id, text, checked } = todo; //비구조화 할당
 
   return (
     <div className="TodoListitem">
-      <div className={cn("checkbox", { checked })}>
+      <div className={cn("checkbox", { checked })} onClick={() => onToggle(id)}>
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <div className="text">{text}</div>
       </div>
