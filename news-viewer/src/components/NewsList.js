@@ -39,7 +39,7 @@ const NewsList = () => {
   if (loading) {
     return <NewsListBlock>대기 중...</NewsListBlock>;
   }
-  //null값인지 확인을 해주지않으면 map함수에 값이 들어가지않기때문에 흰페이지가 들어간다.
+
   if (!articles) {
     return null;
   }
