@@ -36,34 +36,22 @@ const CategoriesBlock = styled.div`
   padding: 1rem;
   width: 768px;
   margin: 0 auto;
-  @media screen and (max width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
     overflow-x: auto;
   }
 `;
 
 const Category = styled.div`
-  font-szie: 1.125rem;
+  font-size: 1.125rem;
   cursor: pointer;
   white-space: pre;
   text-decoration: none;
   color: inherit;
   padding-bottom: 0.25rem;
-
   &:hover {
     color: #495057;
   }
-
-  ${(props) =>
-    props.active &&
-    css`
-      font-weight: 600;
-      bordor-bottom: 2px solid #22b8cf;
-      color: #22b8cf;
-      &:hover {
-        color: #3bc9db;
-      }
-    `}
 
   & + & {
     margin-left: 1rem;

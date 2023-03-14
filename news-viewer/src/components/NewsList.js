@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const NewsListBlock = styled.div`
-  box-sizing: bordor-box;
+  box-sizing: border-box;
   padding-bottom: 3rem;
   width: 768px;
   margin: 0 auto;
   margin-top: 2rem;
-  @media screen and(max-width:768px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -18,7 +18,7 @@ const NewsListBlock = styled.div`
 
 const NewsList = ({ category }) => {
   const [articles, setArticles] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); //요청 대기중 = true, 대기중이 아님 = false
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +27,7 @@ const NewsList = ({ category }) => {
         const query = category === "all" ? "" : `&category=${category}`;
 
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=8cdb9a227dd546538b1a5b716f5f0cd5`
+          `https://newsapi.org/v2/top-headlines?country=us${query}&apiKey=8cdb9a227dd546538b1a5b716f5f0cd5`
         );
         setArticles(response.data.articles);
       } catch (e) {
